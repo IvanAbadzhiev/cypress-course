@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cypress Selectors Practice</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+        }
+        .primary {
+            background-color: blue;
+            color: white;
+        }
+        .secondary {
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Cypress Selectors Practice Page</h1>
+
+    <!-- Element Selector -->
+    <p>This is a paragraph element.</p>
+
+    <!-- ID Selector -->
+    <button id="submit-button" class="button primary">Submit</button>
+
+    <!-- Class Selector -->
+    <button class="button secondary">Cancel</button>
+
+    <!-- Attribute Selector -->
+    <input type="email" placeholder="Enter your email">
+
+    <!-- Data Attribute Selector -->
+    <div data-cy="custom-element">
+        <p>Data attribute selector example.</p>
+    </div>
+
+	
+
+    <!-- Nested Elements -->
+    <div class="container">
+        <ul>
+            <li>List Item 1</li>
+            <li class="active">List Item 2</li>
+            <li>List Item 3</li>
+        </ul>
+        <div class="inner-container">
+            <span>Inner Content</span>
+            <a href="#" class="link">Click Me</a>
+        </div>
+    </div>
+
+    <!-- Sibling Elements -->
+    <div class="card">
+        <h2>Card Title</h2>
+        <p>Card content.</p>
+    </div>
+    <div class="card">
+        <h2>Another Card Title</h2>
+        <p>Another card content.</p>
+    </div>
+
+    <!-- Form Elements -->
+    <form id="login-form">
+        <label for="username">Username:</label>
+        <input id="username" name="username" type="text" data-test="username-input">
+        
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password" data-test="password-input">
+        
+        <input type="checkbox" id="remember-me" name="remember" value="yes">
+        <label for="remember-me">Remember Me</label>
+        
+        <button type="submit" data-test="login-button">Login</button>
+    </form>
+
+    <!-- Dynamic Content -->
+    <div id="dynamic-content">
+        <p>This content may change dynamically.</p>
+    </div>
+
+    <!-- Hidden Element -->
+    <div id="hidden-element" class="hidden">
+        <p>This element is hidden.</p>
+    </div>
+
+</body>
+</html>
