@@ -1,0 +1,30 @@
+1. Form Rendering:
+* Verify that the login form loads correctly.
+* Check that all input fields and labels are present.
+
+2. Empty Fields Validation:
+* Attempt to submit the form with both fields empty.
+* Verify that appropriate error messages are displayed.
+
+3. Username Validation:
+* Enter less than 3 characters in the username field.
+* Verify that the correct error message appears.
+
+4.Password Validation:
+* Enter less than 6 characters in the password field.
+* Verify that the correct error message appears.
+
+5.Successful Submission:
+* Enter valid inputs for both fields.
+* Verify that the success alert is displayed.
+
+6.Field Trim Validation:
+* Enter spaces or whitespace in the username field.
+* Verify that it counts as empty and shows an error.
+
+7.Error Message Clearance:
+* After displaying an error, correct the input.
+* Verify that the error message is cleared upon re-submission.
+
+Form Not Submitted on Validation Failure:
+* Ensure the form is not submitted when validations fail.

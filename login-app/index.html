@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container label {
+            margin-top: 10px;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+
+        .login-container input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login Form</h2>
+    <form id="loginForm" action="#" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        // Remove previous error messages
+        var usernameErrorDiv = document.getElementById("usernameError");
+        if (usernameErrorDiv) {
+            usernameErrorDiv.remove();
+        }
+
+        var passwordErrorDiv = document.getElementById("passwordError");
+        if (passwordErrorDiv) {
+            passwordErrorDiv.remove();
+        }
+
+        var isValid = true;
+
+        // Username validation
+        var usernameInput = document.getElementById("username");
+        var username = usernameInput.value.trim();
+        if (username === "") {
+            var errorDiv = document.createElement("div");
+            errorDiv.className = "error";
+            errorDiv.id = "usernameError";
+            errorDiv.textContent = "Username is required.";
+            usernameInput.parentNode.insertBefore(errorDiv, usernameInput.nextSibling);
+            isValid = false;
+        } else if (username.length < 3) {
+            var errorDiv = document.createElement("div");
+            errorDiv.className = "error";
+            errorDiv.id = "usernameError";
+            errorDiv.textContent = "Username must be at least 3 characters.";
+            usernameInput.parentNode.insertBefore(errorDiv, usernameInput.nextSibling);
+            isValid = false;
+        }
+
+        // Password validation
+        var passwordInput = document.getElementById("password");
+        var password = passwordInput.value;
+        if (password === "") {
+            var errorDiv = document.createElement("div");
+            errorDiv.className = "error";
+            errorDiv.id = "passwordError";
+            errorDiv.textContent = "Password is required.";
+            passwordInput.parentNode.insertBefore(errorDiv, passwordInput.nextSibling);
+            isValid = false;
+        } else if (password.length < 6) {
+            var errorDiv = document.createElement("div");
+            errorDiv.className = "error";
+            errorDiv.id = "passwordError";
+            errorDiv.textContent = "Password must be at least 6 characters.";
+            passwordInput.parentNode.insertBefore(errorDiv, passwordInput.nextSibling);
+            isValid = false;
+        }
+
+        if (!isValid) {
+            event.preventDefault(); // Prevent form submission
+        } else {
+            // For the purpose of the course, prevent actual submission
+            event.preventDefault();
+            alert("Form submitted successfully!");
+        }
+    });
+</script>
+
+</body>
+</html>
